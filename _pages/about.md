@@ -4,4 +4,4 @@ title: About
 image: '/images/pages/about.jpeg'
 ---
 
-I'm Christina. Sometimes Tina.
+I'm Christina. I write real words and code sometimes.

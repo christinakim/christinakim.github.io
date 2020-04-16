@@ -11,14 +11,13 @@ email:       ''
 description: ''
 baseurl:     '' # The subpath of your site, e.g. /blog
 url:         'christina.kim' # The base hostname & protocol for your site
-twitter:     ''
-github:      ''
-instagram:   ''
-facebook:    ''
+twitter:     'www.twitter.com/christinahkim'
+github:      'www.github.com/christinakim'
 
 markdown:  kramdown
 permalink: pretty
 paginate:  10
+excerpt_separator: <!--end_excerpt-->
 
 sass:
   style: compressed

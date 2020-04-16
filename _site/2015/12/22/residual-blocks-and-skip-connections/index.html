@@ -6,9 +6,9 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-  <title>Page Not Found</title>
+  <title>Skip Connections and Residual Blocks</title>
   <meta name='description' content="">
-  <link rel='canonical' href="http://localhost:4000/404.html">
+  <link rel='canonical' href="http://localhost:4000/2015/12/22/residual-blocks-and-skip-connections/">
   <link rel='alternate' type='application/rss+xml' title='Christina Kim' href="http://localhost:4000/feed.xml">
 
   <style>
@@ -110,21 +110,109 @@
 
 </header>
 
-    <div class='o-wrapper'>
+    
 
+
+
+<div class='o-wrapper'>
   <div class='o-grid'>
     <div class='o-grid__col'>
-      <article class='c-post'>
-        <h1 class='c-post__title u-text-center'>Page Not Found</h1>
+      <article class='c-post' itemscope itemtype='http://schema.org/BlogPosting'>
 
-        <div class='c-content'>
+        <h1 class='c-post__title u-text-center'>Skip Connections and Residual Blocks</h1>
+
+        <time class='c-post__date' datetime='2015-12-22T00:00:00-08:00' itemprop='datePublished'>22 Dec 2015</time>
+
+        <div class='c-content' itemprop='articleBody'>
           
 
+          <!--end_excerpt-->
+<p><img src="/images/posts/residual_block.png" alt="image" />
+This is a residual block, or skip connection. The residual is the difference between the predicted and target values. The words <strong>residual</strong> and <strong>skip</strong> are used interchangeably in many places. They can also be thought of as an identity block. If there is no residual then H(x) = x (aka the identity).</p>
+
+<p>A residual block is trying to learn the residual of the true distribution minus the input, while a normal layer tries to learn that true distribution</p>
+
+<p><strong>why does this work better?</strong></p>
+
+<p>Theoretically this shouldn’t matter. Neural networks are function approximations. The more layers you add, the better the approximation should be. However, this does not work in reality for many reasons such as exploding or vanishing gradients. By allowing the values to essentially pass through in a linear way, we can use previous gradients.</p>
+
+<p>In other words, a deeper net is not necessarily optimal because it might not learn the abstractions as the information learned in the earlier layers might disappear in the later layers.</p>
+
+<p>Less layers means a simpler model which is faster to train.</p>
+
+<h2 id="code">code</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">class</span> <span class="nc">ResidualBlock</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+       <span class="n">expansion</span> <span class="o">=</span> <span class="mi">1</span>
+
+
+       <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_planes</span><span class="p">,</span> <span class="n">planes</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+           <span class="nb">super</span><span class="p">(</span><span class="n">BasicBlock</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+           <span class="bp">self</span><span class="o">.</span><span class="n">conv1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_planes</span><span class="p">,</span> <span class="n">planes</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="n">stride</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+           <span class="bp">self</span><span class="o">.</span><span class="n">bn1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="n">planes</span><span class="p">)</span>
+           <span class="bp">self</span><span class="o">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">planes</span><span class="p">,</span> <span class="n">planes</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+           <span class="bp">self</span><span class="o">.</span><span class="n">bn2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="n">planes</span><span class="p">)</span>
+
+
+           <span class="bp">self</span><span class="o">.</span><span class="n">shortcut</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
+           <span class="k">if</span> <span class="n">stride</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">in_planes</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expansion</span><span class="o">*</span><span class="n">planes</span><span class="p">:</span>
+               <span class="bp">self</span><span class="o">.</span><span class="n">shortcut</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+                   <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_planes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">expansion</span><span class="o">*</span><span class="n">planes</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="n">stride</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span>
+                   <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expansion</span><span class="o">*</span><span class="n">planes</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="math">math</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>R(x) is the residual
+H(x) is the output aka true distribution
+x is the input in the layer
+
+R(x) = Output — Input = H(x) — x
+
+The residual plus the input is the true distribution
+H(x) = R(x) + x
+</code></pre></div></div>
+
+<h2 id="history">history</h2>
+
+<p>First introduced by microsoft in 2015.</p>
+
         </div>
+
+        <div class='c-tags'>
+          
+            <a href='/tag/frontpage'>frontpage</a>
+          
+            <a href='/tag/jekyll'>jekyll</a>
+          
+            <a href='/tag/blog'>blog</a>
+          
+        </div>
+
+        <hr>
+
+        <section class='disqus'>
+  <div id='disqus_thread'></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/2015/12/22/residual-blocks-and-skip-connections/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      // Change `aspirethemes-demos` with your Disqus shortcode
+      s.src = '//aspirethemes-demos.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript>
+</section>
+
       </article>
     </div>
   </div>
-
 </div>
 
     <footer class='c-footer'>
