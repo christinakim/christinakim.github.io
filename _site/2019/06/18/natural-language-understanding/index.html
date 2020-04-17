@@ -6,9 +6,9 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-  <title>Backpropagation</title>
+  <title>Natural Language Understanding</title>
   <meta name='description' content="">
-  <link rel='canonical' href="http://localhost:4000/2019/11/06/backpropagation/">
+  <link rel='canonical' href="http://localhost:4000/2019/06/18/natural-language-understanding/">
   <link rel='alternate' type='application/rss+xml' title='christina.kim' href="http://localhost:4000/feed.xml">
 
   <style>
@@ -119,31 +119,38 @@
     <div class='o-grid__col'>
       <article class='c-post' itemscope itemtype='http://schema.org/BlogPosting'>
 
-        <h1 class='c-post__title u-text-center'>Backpropagation</h1>
+        <h1 class='c-post__title u-text-center'>Natural Language Understanding</h1>
 
-        <time class='c-post__date' datetime='2019-11-06T00:00:00-08:00' itemprop='datePublished'>06 Nov 2019</time>
+        <time class='c-post__date' datetime='2019-06-18T00:00:00-07:00' itemprop='datePublished'>18 Jun 2019</time>
 
         <div class='c-content' itemprop='articleBody'>
           
 
           <!--end_excerpt-->
-<h2 id="description">Description</h2>
-<p>Backpropagation is short for backward propagation of errors. It’s used to compute gradients for our loss function in machine learning. It does this by computing the partial derivatives of each training example in regards to the weights and bias. Cost can be written as a function of the outputs from the neural network</p>
+<p>Natural Language Understanding has been a focus in AI since the birth of AI as a field was defined. The 60s and 70s saw a burst of knowledge bases, ontologies, math word problem solvers. NLU is considered an AI hard problem (aka when we figure this out we have figured out general artificial intelligence).</p>
 
-<p>Another neat feature of backpropagation is that relates the neural network’s error and the weights and biases of the neural network’s last layer and it does this for the weights and biases of the last layer to the weights and biases of the second to last layer, and continues, using chain  rule.</p>
+<p>The tricky part of building a machine reading-comprehension system is that it requires a mostly-accurate (I say mostly accurate because unclear how specific human’s models of the world are) idea of the world, and the ability to generalize to new contexts/situations reasonably well. The ability to reason and make pretty good predictions in new cases given our prior knowledge and understanding of the world is what makes us great general purpose learners (and also helped us to exist till now probably).</p>
 
-<p>why is it important?</p>
+<p>These are the current types of tasks and benchmarks that test for commonsense knowledge and reasoning.</p>
 
-<p>there’s lots of ways you can compute the gradients for our loss function but most of them take too long for deep learning - requiring us to compute the cost in respects to each parameter each .</p>
+<p><strong>Textual Entailment</strong>
+Textual entailment (TE) in natural language processing is a directional relation between text fragments. The relation holds whenever the truth of one text fragment follows from another text. In the TE framework, the entailing and entailed texts are termed text (t) and hypothesis (h), respectively.
+examples of tasks:</p>
+<ul>
+  <li>RTE Challenges (Dagan, Glickman, &amp; Magnini, 2005),</li>
+  <li>Story Cloze Test (Mostafazadeh, Chambers, He, Parikh, Batra, Vanderwende, Kohli, &amp; Allen, 2016)</li>
+  <li>SWAG (Zellers, Bisk, Schwartz, &amp; Choi, 2018)</li>
+</ul>
 
-<p>Backpropagation is way faster - it allows us to simultaneously compute all the partial derivatives using one forward pass through the network, then one backward pass through the network.</p>
-
-<h2 id="math">Math</h2>
-
-<p>The actual algorithm:
-<img src="/images/posts/nielson_backprop.png" alt="image" /></p>
-
-<p>Taken from Neural Networks and Deep Learning by Michael Nielson</p>
+<p><strong>Question Answering</strong></p>
+<ul>
+  <li>CommonsenseQA (Talmor, Herzig, Lourie  Berant, 2015)</li>
+  <li>Winograd Schema Challenge (Levesque, 2011)</li>
+  <li>GLUE (Wang, Singh, Michael, Hill, Levy, &amp; Bowman, 2018)</li>
+  <li>Event2Mind (Rashkin, Sap, Allaway, Smith, &amp; Choi, 2018b)</li>
+  <li>bAbI (Weston, Bordes, Chopra, Rush, van Merriënboer, Joulin, &amp; Mikolov, 2015)</li>
+  <li>SuperGLUE(Wang, Pruksachatkun, Nangia, Singh, Michael, Hill, Levy, Bowman, 2019)</li>
+</ul>
 
         </div>
 
@@ -163,7 +170,7 @@
   <div id='disqus_thread'></div>
   <script>
     var disqus_config = function () {
-      this.page.url = 'http://localhost:4000/2019/11/06/backpropagation/';
+      this.page.url = 'http://localhost:4000/2019/06/18/natural-language-understanding/';
     };
 
     (function() {

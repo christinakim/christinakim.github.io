@@ -1,7 +1,5 @@
 ---
 layout: page
 title: About
-image:
+image: 'images/pages/bb.jpeg'
 ---
-
-I'm Christina. This is my learning log.

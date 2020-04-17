@@ -1,0 +1,26 @@
+I"<!--end_excerpt-->
+<p>Natural Language Understanding has been a focus in AI since the birth of AI as a field was defined. The 60s and 70s saw a burst of knowledge bases, ontologies, math word problem solvers. NLU is considered an AI hard problem (aka when we figure this out we have figured out general artificial intelligence).</p>
+
+<p>The tricky part of building a machine reading-comprehension system is that it requires a mostly-accurate (I say mostly accurate because unclear how specific human’s models of the world are) idea of the world, and the ability to generalize to new contexts/situations reasonably well. The ability to reason and make pretty good predictions in new cases given our prior knowledge and understanding of the world is what makes us great general purpose learners (and also helped us to exist till now probably).</p>
+
+<p>These are the current types of tasks and benchmarks that test for commonsense knowledge and reasoning.</p>
+
+<p><strong>Textual Entailment</strong>
+Textual entailment (TE) in natural language processing is a directional relation between text fragments. The relation holds whenever the truth of one text fragment follows from another text. In the TE framework, the entailing and entailed texts are termed text (t) and hypothesis (h), respectively.
+examples of tasks:</p>
+<ul>
+  <li>RTE Challenges (Dagan, Glickman, &amp; Magnini, 2005),</li>
+  <li>Story Cloze Test (Mostafazadeh, Chambers, He, Parikh, Batra, Vanderwende, Kohli, &amp; Allen, 2016)</li>
+  <li>SWAG (Zellers, Bisk, Schwartz, &amp; Choi, 2018)</li>
+</ul>
+
+<p><strong>Question Answering</strong></p>
+<ul>
+  <li>CommonsenseQA (Talmor, Herzig, Lourie  Berant, 2015)</li>
+  <li>Winograd Schema Challenge (Levesque, 2011)</li>
+  <li>GLUE (Wang, Singh, Michael, Hill, Levy, &amp; Bowman, 2018)</li>
+  <li>Event2Mind (Rashkin, Sap, Allaway, Smith, &amp; Choi, 2018b)</li>
+  <li>bAbI (Weston, Bordes, Chopra, Rush, van Merriënboer, Joulin, &amp; Mikolov, 2015)</li>
+  <li>SuperGLUE(Wang, Pruksachatkun, Nangia, Singh, Michael, Hill, Levy, Bowman, 2019)</li>
+</ul>
+:ET
