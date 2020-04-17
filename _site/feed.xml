@@ -5,10 +5,71 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 Apr 2020 02:46:35 -0700</pubDate>
-    <lastBuildDate>Fri, 17 Apr 2020 02:46:35 -0700</lastBuildDate>
+    <pubDate>Fri, 17 Apr 2020 03:38:54 -0700</pubDate>
+    <lastBuildDate>Fri, 17 Apr 2020 03:38:54 -0700</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
 
+    
+      <item>
+        <title></title>
+        <description>&lt;p&gt;A paper summary of &lt;a href=&quot;'https://arxiv.org/abs/1912.06208'&quot;&gt;Shaping representations through communication: community size effect in artificial learning systems
+&lt;/a&gt;
+&lt;!--end_excerpt--&gt;
+This paper is motivated by co-adapation that occurs (information shared between them can become too specific) a) between a single encoder/speaker, and decoder/listener or b) when shared language arises within small groups. Since as long as the encoder, and decoder agree on the information, the learned information doesn’t need to be representative, abstractive, or systematic. This paper explores adding more encoders and decoders that are randomly paired up at each training step to encourage the encoders and decoders to learn a more general representation. They find that increasing the community size of encoders/decoders reduces idiosyncrasies in learned code and prevents co-adaption.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 17 Apr 2020 03:38:54 -0700</pubDate>
+        <link>http://localhost:4000/2020/04/17/2019-12-13-shaping-representations-through-communication-community/</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/04/17/2019-12-13-shaping-representations-through-communication-community/</guid>
+      </item>
+    
+      <item>
+        <title></title>
+        <description>&lt;p&gt;A paper summary of &lt;a href=&quot;'https://arxiv.org/abs/1908.10090'&quot;&gt;On NMT Search Errors and Model Errors: Cat Got Your Tongue?&lt;/a&gt;
+&lt;!--end_excerpt--&gt;
+Current NMT models may not be working correctly! When mostly given perfect conditions, aka an infinite search space, over half of the time, the models predict no translation (empty sequences).&lt;/p&gt;
+
+&lt;p&gt;In this paper, the authors explore what NMT model’s predict as the best translation when the beam width is “infinite.” When the beam width is infinite, the model can consider all and any possibilities. Their technical contribution was coming up with a way to have models use infinite beam widths when searching. They found that in 51.8% of the cases, the model thought an empty sequence was the best translation! With beam search, longer sequences have lower probabilities, and it appears in many cases lower probabilities than a single EOS token.&lt;/p&gt;
+
+&lt;p&gt;This paper is a startling contribution to NMT. It explores and exposes a very troubling bug of current NMT models. This paper is an exciting contribution since many NLP problems are modeled as a sequence to sequence problems, and many of the SOTA language models involve decoding with beam search. These are exciting implications and bring new questions for NLP research.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 17 Apr 2020 03:38:54 -0700</pubDate>
+        <link>http://localhost:4000/2020/04/17/2019-11-18-nmt-search-errors/</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/04/17/2019-11-18-nmt-search-errors/</guid>
+      </item>
+    
+      <item>
+        <title></title>
+        <description>&lt;p&gt;A paper summary of &lt;a href=&quot;'https://arxiv.org/abs/1911.03343'&quot;&gt;Negated LAMA: Birds cannot fly&lt;/a&gt;
+&lt;!--end_excerpt--&gt;
+When pre-trained language models, such as GPT-2, came out, I was curious about what they were learning and what applications could an LM, like GPT-2, have. What exactly was the model learning?&lt;/p&gt;
+
+&lt;p&gt;In &lt;a href=&quot;/2019/11/14/lm-as-a-knowledge-base/&quot;&gt;Language Models as a Knowledge Base?&lt;/a&gt; the authors have a possible answer to that question. The idea was that LM is learning facts and understanding some things, and could you used them then as a knowledge base? The experiments they ran focused masking words in a cloze sentence to get the LM to predict what the answer would be. A cloze statement “is generated from a subject- relation-object triple from a knowledge base and from a template statement for the relation that contains variables X and Y for subject and object (e.g., “X was born in Y”).” For instance, “birds can MASK,” would return fly.&lt;/p&gt;
+
+&lt;p&gt;The authors of Negated LAMA find that LM is not great with negation. When given “birds cannot MASK,” it returns fly as well. This suggests that LM are not actually understanding the text shoveled into it. This does show that LM’s are good at answering all questions regardless of accuracy, but the authors suggest that maybe it should not be giving an answer.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 17 Apr 2020 03:38:54 -0700</pubDate>
+        <link>http://localhost:4000/2020/04/17/2019-11-14-negated-lama/</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/04/17/2019-11-14-negated-lama/</guid>
+      </item>
+    
+      <item>
+        <title></title>
+        <description>&lt;p&gt;A paper summary of &lt;a href=&quot;'https://arxiv.org/pdf/1910.09260.pdf'&quot;&gt;Human-Like Decision Making: Document-level Aspect Sentiment
+Classification via Hierarchical Reinforcement Learning&lt;/a&gt;
+&lt;!--end_excerpt--&gt;&lt;/p&gt;
+
+&lt;p&gt;Document-level Aspect Sentient Classification is a task to predict user’s sentiment polarities for different aspects of a product in a review. The authors propose using Hierarchical Reinforcement Learning to do the task as it’s more interpretable than other successful neural nets that perform well on DASC.&lt;/p&gt;
+
+&lt;p&gt;HRL is pretty cool because it makes (more) intuitive sense as to how it works compared to other neural net architecture. Instead of regular RL, there are different tiers of policies. For DASC, the authors propose using a high-level policy to find the relevant clauses. A low-level policy to select sentiment-relevant words inside the selected clauses, they used a sentiment rating predictor that provides the reward signals to both the clause and word selection policies.&lt;/p&gt;
+
+&lt;p&gt;The results of this method were comparable to state of the art methods of aspect sentiment classification. A cool thing that I appreciated the authors, including were ablation studies for HRL. They broke down how each component of the HRL architecture impacted the results.&lt;/p&gt;
+
+&lt;p&gt;It was interesting to note that negated sentences didn’t work well with this method. I think negation is an interesting problem because if a neural net truly understands a sentence/clause, then I’d expect it to understand negations easily.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 17 Apr 2020 03:38:54 -0700</pubDate>
+        <link>http://localhost:4000/2020/04/17/2019-10-22-hrl/</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/04/17/2019-10-22-hrl/</guid>
+      </item>
     
       <item>
         <title>Grounded Language Learning</title>
@@ -124,6 +185,21 @@ In concurrent work, developmental cognitive scientists have argued that word acq
         <pubDate>Mon, 18 Nov 2019 00:00:00 -0800</pubDate>
         <link>http://localhost:4000/2019/11/18/beam-search/</link>
         <guid isPermaLink="true">http://localhost:4000/2019/11/18/beam-search/</guid>
+      </item>
+    
+      <item>
+        <title>Language Models as a Knowledge Base?</title>
+        <description>&lt;p&gt;A paper summary of &lt;a href=&quot;'https://arxiv.org/pdf/1909.01066.pdf'&quot;&gt;Language Models as Knowledge Bases?&lt;/a&gt;
+&lt;!--end_excerpt--&gt;
+This paper explores using language models as a knowledge base. Structured knowledge bases are pretty restrictive and hard to manage. For that reason, there hasn’t been a lot of research interest in structured knowledge bases since the 80s since it appeared to be impractical for Q/A other fact-based NLP tasks.&lt;/p&gt;
+
+&lt;p&gt;Language models make an attractive substitute for structured knowledge bases since they don’t run into the same issues structured knowledge bases had. They don’t require schema engineering, allow queries about an open class of relations, can easily extend to more data and require no human supervision to train.&lt;/p&gt;
+
+&lt;p&gt;The authors propose LAMA (LAnguage Model Analysis), which is a probe for analyzing the factual and commonsense knowledge contained in pretrained language models. They used this method to evaluate BERT. They found that BERT-large performs on par to a knowledge base from a text. Their experiments found that pretrained BERT-large was able to recall knowledge better than its other pretrained LM competitors and at a level remarkably competitive with non-neural and supervised alternatives.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 14 Nov 2019 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/2019/11/14/lm-as-a-knowledge-base/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/11/14/lm-as-a-knowledge-base/</guid>
       </item>
     
       <item>
@@ -258,6 +334,8 @@ examples of tasks:&lt;/p&gt;
             <link>http://localhost:4000/about.html</link>
           </item>
         
+      
+    
       
     
       

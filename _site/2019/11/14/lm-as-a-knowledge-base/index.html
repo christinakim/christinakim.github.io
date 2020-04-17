@@ -6,9 +6,9 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-  <title>Grounded Language Learning</title>
-  <meta name='description' content="">
-  <link rel='canonical' href="http://localhost:4000/2020/03/04/grounded-language-learning/">
+  <title>Language Models as a Knowledge Base?</title>
+  <meta name='description' content="A paper summary of Language Models as Knowledge Bases?">
+  <link rel='canonical' href="http://localhost:4000/2019/11/14/lm-as-a-knowledge-base/">
   <link rel='alternate' type='application/rss+xml' title='christina.kim' href="http://localhost:4000/feed.xml">
 
   <style>
@@ -123,59 +123,20 @@
     <div class='o-grid__col'>
       <article class='c-post' itemscope itemtype='http://schema.org/BlogPosting'>
 
-        <h1 class='c-post__title u-text-center'>Grounded Language Learning</h1>
+        <h1 class='c-post__title u-text-center'>Language Models as a Knowledge Base?</h1>
 
-        <time class='c-post__date' datetime='2020-03-04T00:00:00-08:00' itemprop='datePublished'>04 Mar 2020</time>
+        <time class='c-post__date' datetime='2019-11-14T00:00:00-08:00' itemprop='datePublished'>14 Nov 2019</time>
 
         <div class='c-content' itemprop='articleBody'>
           
 
-          <!--end_excerpt-->
-<h2 id="what-is-it">What is it</h2>
-<p>Grounded Language Learning is the process of learning representations for words based on non-linguistic experience.
-Why is it cool
-Grounded language learning works to make use of language, multimodal information, and interactive environments. This research works toward achieving natural language understanding. Currently, natural language understanding is commonly tested by language models from text-only corpora. This approach with language models is based on the idea that the meaning of a word is based on only its relationship to other words. This is also called a distributional notion of semantics. SOTA language models are incredible for many different tasks and even come close to beating humans at natural language understanding benchmarks. However, there are critiques around NLU benchmarks, and grounded language learning argues that the words are not grounded in anything and, therefore, actually meaningless. With grounded language learning, the hope is to be able to create models that can understand and generalize well to their context.</p>
+          <p>A paper summary of <a href="'https://arxiv.org/pdf/1909.01066.pdf'">Language Models as Knowledge Bases?</a>
+<!--end_excerpt-->
+This paper explores using language models as a knowledge base. Structured knowledge bases are pretty restrictive and hard to manage. For that reason, there hasn’t been a lot of research interest in structured knowledge bases since the 80s since it appeared to be impractical for Q/A other fact-based NLP tasks.</p>
 
-<p>From VIGIL: Visually Grounded Interaction and Language</p>
-<blockquote>
-  <p>“In neuroscience, recent progress in fMRI technology has enabled better understanding of the interaction between language, vision and other modalities suggesting that the brains share neural representations of concepts across vision and language.
-In concurrent work, developmental cognitive scientists have argued that word acquisition in children is closely linked to them learning the underlying physical concepts in the real world and that they generalize surprisingly well at this from sparse evidence.”</p>
+<p>Language models make an attractive substitute for structured knowledge bases since they don’t run into the same issues structured knowledge bases had. They don’t require schema engineering, allow queries about an open class of relations, can easily extend to more data and require no human supervision to train.</p>
 
-  <h2 id="tasks">Tasks</h2>
-  <ul>
-    <li>Visual QA
-<img src="/images/posts/visual_qa.png" alt="image" /></li>
-  </ul>
-</blockquote>
-
-<ul>
-  <li>
-    <p>Embodied QA
-<img src="/images/posts/embodied_qa.png" alt="image" /></p>
-  </li>
-  <li>
-    <p>Captioning</p>
-  </li>
-  <li>Visual-Audio Correspondence
-    <ul>
-      <li><a href="&quot;https://arxiv.org/abs/1705.08168&quot;">Look, Listen, Learn</a> “what can be learned by training visual and audio networks simultaneously to predict whether visual information (a video frame) corresponds or not to audio information (a sound snippet)?”</li>
-    </ul>
-  </li>
-  <li>embodied agents performing interactive tasks
-    <ul>
-      <li><a href="https://aihabitat.org/">AI Habitat</a></li>
-      <li>StreetLearn
-  <a href="/images/posts/street_learn.png">!image</a>
-  <a href="/images/posts/street_learn2.png">!image</a></li>
-      <li><a href="https://github.com/facebookresearch/House3D">House3D</a></li>
-    </ul>
-  </li>
-  <li>other games
-    <ul>
-      <li>Mechanical Turker Descent (MTD) that trains agents to execute natural language commands grounded in a fantasy text adventure game</li>
-    </ul>
-  </li>
-</ul>
+<p>The authors propose LAMA (LAnguage Model Analysis), which is a probe for analyzing the factual and commonsense knowledge contained in pretrained language models. They used this method to evaluate BERT. They found that BERT-large performs on par to a knowledge base from a text. Their experiments found that pretrained BERT-large was able to recall knowledge better than its other pretrained LM competitors and at a level remarkably competitive with non-neural and supervised alternatives.</p>
 
         </div>
 
@@ -187,6 +148,8 @@ In concurrent work, developmental cognitive scientists have argued that word acq
           
             <a href='/tag/blog'>blog</a>
           
+            <a href='/tag/paper-summaries'>paper-summaries</a>
+          
         </div>
 
         <hr>
@@ -195,7 +158,7 @@ In concurrent work, developmental cognitive scientists have argued that word acq
   <div id='disqus_thread'></div>
   <script>
     var disqus_config = function () {
-      this.page.url = 'http://localhost:4000/2020/03/04/grounded-language-learning/';
+      this.page.url = 'http://localhost:4000/2019/11/14/lm-as-a-knowledge-base/';
     };
 
     (function() {
