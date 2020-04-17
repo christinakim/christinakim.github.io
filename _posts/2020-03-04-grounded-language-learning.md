@@ -14,7 +14,7 @@ Grounded language learning works to make use of language, multimodal information
 From VIGIL: Visually Grounded Interaction and Language
 > "In neuroscience, recent progress in fMRI technology has enabled better understanding of the interaction between language, vision and other modalities suggesting that the brains share neural representations of concepts across vision and language.
 In concurrent work, developmental cognitive scientists have argued that word acquisition in children is closely linked to them learning the underlying physical concepts in the real world and that they generalize surprisingly well at this from sparse evidence."
->
+
 ## Tasks
 - Visual QA
 ![image](/images/posts/visual_qa.png)
