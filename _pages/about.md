@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-image: '/images/pages/about.jpeg'
+image:
 ---
 
-I'm Christina. I write real words and code sometimes.
+I'm Christina. This is my learning log.

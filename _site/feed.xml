@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 Apr 2020 00:12:36 -0700</pubDate>
-    <lastBuildDate>Fri, 17 Apr 2020 00:12:36 -0700</lastBuildDate>
+    <pubDate>Fri, 17 Apr 2020 00:20:11 -0700</pubDate>
+    <lastBuildDate>Fri, 17 Apr 2020 00:20:11 -0700</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
 
     
@@ -220,7 +220,7 @@ H(x) = R(x) + x
         
           <item>
             <title>About</title>
-            <description>&lt;p&gt;I’m Christina. I write real words and code sometimes.&lt;/p&gt;
+            <description>&lt;p&gt;I’m Christina. This is my learning log.&lt;/p&gt;
 </description>
             <link>http://localhost:4000/about.html</link>
           </item>
