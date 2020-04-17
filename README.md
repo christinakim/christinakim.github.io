@@ -1,4 +1,6 @@
 
-#christinakim.github.io
-![image](favicon.ico)
+# ![image](favicon.ico) christina.kim
 
+paper summaries, atomic notes, other opinions
+
+on the pursuit of refining taste and aesthetic
