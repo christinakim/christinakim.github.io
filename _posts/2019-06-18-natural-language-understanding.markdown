@@ -17,7 +17,7 @@ Textual entailment (TE) in natural language processing is a directional relation
 examples of tasks:
 - RTE Challenges (Dagan, Glickman, & Magnini, 2005),
 - Story Cloze Test (Mostafazadeh, Chambers, He, Parikh, Batra, Vanderwende, Kohli, & Allen, 2016)
-SWAG (Zellers, Bisk, Schwartz, & Choi, 2018)
+- SWAG (Zellers, Bisk, Schwartz, & Choi, 2018)
 
 **Question Answering**
 - CommonsenseQA (Talmor, Herzig, Lourie  Berant, 2015)
