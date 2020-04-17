@@ -16,21 +16,25 @@ From VIGIL: Visually Grounded Interaction and Language
 In concurrent work, developmental cognitive scientists have argued that word acquisition in children is closely linked to them learning the underlying physical concepts in the real world and that they generalize surprisingly well at this from sparse evidence."
 
 ## Tasks
-- Visual QA
+#### Visual QA
 ![image](/images/posts/visual_qa.png)
 
-- Embodied QA
+#### Embodied QA
 ![image](/images/posts/embodied_qa.png)
 
-- Captioning
+#### Captioning
 
-- Visual-Audio Correspondence
-    - [Look, Listen, Learn]("https://arxiv.org/abs/1705.08168") "what can be learned by training visual and audio networks simultaneously to predict whether visual information (a video frame) corresponds or not to audio information (a sound snippet)?"
-- embodied agents performing interactive tasks
-    - [AI Habitat](https://aihabitat.org/)
-    - StreetLearn
-    [!image](/images/posts/street_learn.png)
-    [!image](/images/posts/street_learn2.png)
-    - [House3D](https://github.com/facebookresearch/House3D)
-- other games
-    - Mechanical Turker Descent (MTD) that trains agents to execute natural language commands grounded in a fantasy text adventure game
+#### Visual-Audio Correspondence
+[Look, Listen, Learn]("https://arxiv.org/abs/1705.08168") "what can be learned by training visual and audio networks simultaneously to predict whether visual information (a video frame) corresponds or not to audio information (a sound snippet)?"
+
+#### Embodied Agents Performing Interactive Tasks
+[AI Habitat](https://aihabitat.org/)
+
+[StreetLearn](https://github.com/deepmind/streetlearn)
+    ![image](/images/posts/street_learn.png)
+    ![image](/images/posts/street_learn2.png)
+
+[House3D](https://github.com/facebookresearch/House3D)
+
+#### Other Games
+Mechanical Turker Descent (MTD) that trains agents to execute natural language commands grounded in a fantasy text adventure game
