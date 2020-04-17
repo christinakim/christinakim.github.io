@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Natural Language Understanding
-tags: [frontpage, jekyll, blog]
+tags: [atomic-note, survey]
 image:
 ---
 

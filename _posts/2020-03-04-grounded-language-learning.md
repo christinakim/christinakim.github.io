@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Grounded Language Learning
-tags: [frontpage, jekyll, blog]
+tags: [atomic-note, survey]
 image:
 ---
 

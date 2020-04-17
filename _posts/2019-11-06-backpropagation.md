@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Backpropagation
-tags: [frontpage, jekyll, blog]
+tags: [atomic-note, math]
 image:
 ---
 

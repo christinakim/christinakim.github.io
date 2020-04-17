@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Beam Search
-tags: [frontpage, jekyll, blog]
+tags: [atomic-note]
 image:
 ---
 

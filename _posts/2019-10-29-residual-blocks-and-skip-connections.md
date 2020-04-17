@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Skip Connections and Residual Blocks
-tags: [frontpage, jekyll, blog]
+tags: [atomic-note]
 image:
 ---
 
