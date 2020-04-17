@@ -5,16 +5,159 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 16 Apr 2020 02:20:00 -0700</pubDate>
-    <lastBuildDate>Thu, 16 Apr 2020 02:20:00 -0700</lastBuildDate>
+    <pubDate>Fri, 17 Apr 2020 00:12:36 -0700</pubDate>
+    <lastBuildDate>Fri, 17 Apr 2020 00:12:36 -0700</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
 
     
       <item>
+        <title>Grounded Language Learning</title>
+        <description>&lt;!--end_excerpt--&gt;
+&lt;h2 id=&quot;what-is-it&quot;&gt;What is it&lt;/h2&gt;
+&lt;p&gt;Grounded Language Learning is the process of learning representations for words based on non-linguistic experience.
+Why is it cool
+Grounded language learning works to make use of language, multimodal information, and interactive environments. This research works toward achieving natural language understanding. Currently, natural language understanding is commonly tested by language models from text-only corpora. This approach with language models is based on the idea that the meaning of a word is based on only its relationship to other words. This is also called a distributional notion of semantics. SOTA language models are incredible for many different tasks and even come close to beating humans at natural language understanding benchmarks. However, there are critiques around NLU benchmarks, and grounded language learning argues that the words are not grounded in anything and, therefore, actually meaningless. With grounded language learning, the hope is to be able to create models that can understand and generalize well to their context.&lt;/p&gt;
+
+&lt;p&gt;From VIGIL: Visually Grounded Interaction and Language&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;“In neuroscience, recent progress in fMRI technology has enabled better understanding of the interaction between language, vision and other modalities suggesting that the brains share neural representations of concepts across vision and language.
+In concurrent work, developmental cognitive scientists have argued that word acquisition in children is closely linked to them learning the underlying physical concepts in the real world and that they generalize surprisingly well at this from sparse evidence.”&lt;/p&gt;
+
+  &lt;h2 id=&quot;tasks&quot;&gt;Tasks&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Visual QA
+&lt;img src=&quot;/images/posts/visual_qa.png&quot; alt=&quot;image&quot; /&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Embodied QA
+&lt;img src=&quot;/images/posts/embodied_qa.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Captioning&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Visual-Audio Correspondence
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;&amp;quot;https://arxiv.org/abs/1705.08168&amp;quot;&quot;&gt;Look, Listen, Learn&lt;/a&gt; “what can be learned by training visual and audio networks simultaneously to predict whether visual information (a video frame) corresponds or not to audio information (a sound snippet)?”&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;embodied agents performing interactive tasks
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://aihabitat.org/&quot;&gt;AI Habitat&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;StreetLearn
+  &lt;a href=&quot;/images/posts/street_learn.png&quot;&gt;!image&lt;/a&gt;
+  &lt;a href=&quot;/images/posts/street_learn2.png&quot;&gt;!image&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/facebookresearch/House3D&quot;&gt;House3D&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;other games
+    &lt;ul&gt;
+      &lt;li&gt;Mechanical Turker Descent (MTD) that trains agents to execute natural language commands grounded in a fantasy text adventure game&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 04 Mar 2020 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/2020/03/04/grounded-language-learning/</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/03/04/grounded-language-learning/</guid>
+      </item>
+    
+      <item>
+        <title>Beam Search</title>
+        <description>&lt;!--end_excerpt--&gt;
+&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
+&lt;p&gt;It’s a search algorithm to find the best choice from many options. It explores a graph by expanding the most promising node in a limited set. A beam search is usually used in situations where there isn’t a way to store the entire search tree in memory.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;where is it used in DL?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;sequence to sequence models like neural machine translation&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;how is it used in DL?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;used to find the next best word, can be EOS&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In NMT there are lots of possible combinations of words for a translation but we want to pick the best one, aka the one with the max probability distribution, and not one at random.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Interesting things to note:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;When beam width = 1, then beam search is essentially a greedy algorithm&lt;/p&gt;
+
+&lt;p&gt;Beam search multiplies the log of the probabilities of the words to find the max probability - this leads to beam search favoring very short translations. This is kind of fixed by dividing it by the number of tokens.&lt;/p&gt;
+
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;beam_search_decoder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encoded_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;beam_width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;sequences&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;# walk over each step in sequence
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encoded_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;all_candidates&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;# expand each current candidate
+&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sequences&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;seq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;score&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sequences&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+                    &lt;span class=&quot;c1&quot;&gt;# why are we taking the log of the product of the probabilities
+&lt;/span&gt;                    &lt;span class=&quot;c1&quot;&gt;# instead of just the product of the probabilities?
+&lt;/span&gt;                    &lt;span class=&quot;c1&quot;&gt;# the probabilities are all numbers less than 1,
+&lt;/span&gt;                    &lt;span class=&quot;c1&quot;&gt;# multiplying a lot of numbers less than 1 will result in a very smol number
+&lt;/span&gt;                    &lt;span class=&quot;n&quot;&gt;candidate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;score&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])]&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;all_candidates&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;candidate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;# order all candidates by score
+&lt;/span&gt;            &lt;span class=&quot;n&quot;&gt;ordered&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;all_candidates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;# select beam_width best
+&lt;/span&gt;            &lt;span class=&quot;n&quot;&gt;sequence&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ordered&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;beam_width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sequence&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;math&quot;&gt;Math&lt;/h2&gt;
+&lt;p&gt;How the algorithm works from Andrew Ng’s coursera course:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/beam_search1.png&quot; alt=&quot;image&quot; /&gt;
+&lt;img src=&quot;/images/posts/beam_search2.png&quot; alt=&quot;image&quot; /&gt;
+&lt;img src=&quot;/images/posts/beam_search3.png&quot; alt=&quot;image&quot; /&gt;
+&lt;img src=&quot;/images/posts/beam_search4.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;history&quot;&gt;History&lt;/h2&gt;
+&lt;p&gt;The term “beam search” was coined by Raj Reddy, Carnegie Mellon University, 1977.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 18 Nov 2019 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/2019/11/18/beam-search/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/11/18/beam-search/</guid>
+      </item>
+    
+      <item>
+        <title>Backpropagation</title>
+        <description>&lt;!--end_excerpt--&gt;
+&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
+&lt;p&gt;Backpropagation is short for backward propagation of errors. It’s used to compute gradients for our loss function in machine learning. It does this by computing the partial derivatives of each training example in regards to the weights and bias. Cost can be written as a function of the outputs from the neural network&lt;/p&gt;
+
+&lt;p&gt;Another neat feature of backpropagation is that relates the neural network’s error and the weights and biases of the neural network’s last layer and it does this for the weights and biases of the last layer to the weights and biases of the second to last layer, and continues, using chain  rule.&lt;/p&gt;
+
+&lt;p&gt;why is it important?&lt;/p&gt;
+
+&lt;p&gt;there’s lots of ways you can compute the gradients for our loss function but most of them take too long for deep learning - requiring us to compute the cost in respects to each parameter each .&lt;/p&gt;
+
+&lt;p&gt;Backpropagation is way faster - it allows us to simultaneously compute all the partial derivatives using one forward pass through the network, then one backward pass through the network.&lt;/p&gt;
+
+&lt;h2 id=&quot;math&quot;&gt;Math&lt;/h2&gt;
+
+&lt;p&gt;The actual algorithm:
+&lt;img src=&quot;/images/posts/nielson_backprop.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Taken from Neural Networks and Deep Learning by Michael Nielson&lt;/p&gt;
+</description>
+        <pubDate>Wed, 06 Nov 2019 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/2019/11/06/backpropagation/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/11/06/backpropagation/</guid>
+      </item>
+    
+      <item>
         <title>Skip Connections and Residual Blocks</title>
         <description>&lt;!--end_excerpt--&gt;
-&lt;p&gt;&lt;img src=&quot;/images/posts/residual_block.png&quot; alt=&quot;image&quot; /&gt;
-This is a residual block, or skip connection. The residual is the difference between the predicted and target values. The words &lt;strong&gt;residual&lt;/strong&gt; and &lt;strong&gt;skip&lt;/strong&gt; are used interchangeably in many places. They can also be thought of as an identity block. If there is no residual then H(x) = x (aka the identity).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/residual_block.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This is a residual block, or skip connection. The residual is the difference between the predicted and target values. The words &lt;strong&gt;residual&lt;/strong&gt; and &lt;strong&gt;skip&lt;/strong&gt; are used interchangeably in many places. They can also be thought of as an identity block. If there is no residual then H(x) = x (aka the identity).&lt;/p&gt;
 
 &lt;p&gt;A residual block is trying to learn the residual of the true distribution minus the input, while a normal layer tries to learn that true distribution&lt;/p&gt;
 
@@ -62,9 +205,9 @@ H(x) = R(x) + x
 
 &lt;p&gt;First introduced by microsoft in 2015.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 22 Dec 2015 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/2015/12/22/residual-blocks-and-skip-connections/</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/12/22/residual-blocks-and-skip-connections/</guid>
+        <pubDate>Tue, 29 Oct 2019 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/2019/10/29/residual-blocks-and-skip-connections/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/10/29/residual-blocks-and-skip-connections/</guid>
       </item>
     
 

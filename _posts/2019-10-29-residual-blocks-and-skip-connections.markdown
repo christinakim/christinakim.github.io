@@ -7,6 +7,7 @@ image:
 
 <!--end_excerpt-->
 ![image](/images/posts/residual_block.png)
+## Description
 This is a residual block, or skip connection. The residual is the difference between the predicted and target values. The words **residual** and **skip** are used interchangeably in many places. They can also be thought of as an identity block. If there is no residual then H(x) = x (aka the identity).
 
 A residual block is trying to learn the residual of the true distribution minus the input, while a normal layer tries to learn that true distribution

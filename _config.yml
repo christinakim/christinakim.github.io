@@ -7,12 +7,14 @@
 
 # Site settings
 title:       Christina Kim
-email:       ''
+email:       'yo@christina.kim'
 description: ''
 baseurl:     '' # The subpath of your site, e.g. /blog
 url:         'christina.kim' # The base hostname & protocol for your site
-twitter:     'www.twitter.com/christinahkim'
-github:      'www.github.com/christinakim'
+twitter:     'https://www.twitter.com/christinahkim'
+github:      'https://www.github.com/christinakim'
+facebook:      'https://www.facebook.com/christinahkim1'
+instagram:      'https://www.instagram.com/xtkim'
 
 markdown:  kramdown
 permalink: pretty

@@ -6,9 +6,9 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-  <title>Christina Kim</title>
+  <title>Backpropagation</title>
   <meta name='description' content="">
-  <link rel='canonical' href="http://localhost:4000/tag/jekyll/">
+  <link rel='canonical' href="http://localhost:4000/2019/11/06/backpropagation/">
   <link rel='alternate' type='application/rss+xml' title='Christina Kim' href="http://localhost:4000/feed.xml">
 
   <style>
@@ -110,90 +110,77 @@
 
 </header>
 
-    <div class='o-wrapper'>
+    
 
+
+
+<div class='o-wrapper'>
   <div class='o-grid'>
     <div class='o-grid__col'>
-      <h4>jekyll</h4>
+      <article class='c-post' itemscope itemtype='http://schema.org/BlogPosting'>
+
+        <h1 class='c-post__title u-text-center'>Backpropagation</h1>
+
+        <time class='c-post__date' datetime='2019-11-06T00:00:00-08:00' itemprop='datePublished'>06 Nov 2019</time>
+
+        <div class='c-content' itemprop='articleBody'>
+          
+
+          <!--end_excerpt-->
+<h2 id="description">Description</h2>
+<p>Backpropagation is short for backward propagation of errors. It’s used to compute gradients for our loss function in machine learning. It does this by computing the partial derivatives of each training example in regards to the weights and bias. Cost can be written as a function of the outputs from the neural network</p>
+
+<p>Another neat feature of backpropagation is that relates the neural network’s error and the weights and biases of the neural network’s last layer and it does this for the weights and biases of the last layer to the weights and biases of the second to last layer, and continues, using chain  rule.</p>
+
+<p>why is it important?</p>
+
+<p>there’s lots of ways you can compute the gradients for our loss function but most of them take too long for deep learning - requiring us to compute the cost in respects to each parameter each .</p>
+
+<p>Backpropagation is way faster - it allows us to simultaneously compute all the partial derivatives using one forward pass through the network, then one backward pass through the network.</p>
+
+<h2 id="math">Math</h2>
+
+<p>The actual algorithm:
+<img src="/images/posts/nielson_backprop.png" alt="image" /></p>
+
+<p>Taken from Neural Networks and Deep Learning by Michael Nielson</p>
+
+        </div>
+
+        <div class='c-tags'>
+          
+            <a href='/tag/frontpage'>frontpage</a>
+          
+            <a href='/tag/jekyll'>jekyll</a>
+          
+            <a href='/tag/blog'>blog</a>
+          
+        </div>
+
+        <hr>
+
+        <section class='disqus'>
+  <div id='disqus_thread'></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/2019/11/06/backpropagation/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      // Change `aspirethemes-demos` with your Disqus shortcode
+      s.src = '//aspirethemes-demos.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript>
+</section>
+
+      </article>
     </div>
-  </div>
-
-  <div class='o-grid'>
-    
-      <div class='o-grid__col o-grid__col--full'>
-
-  <a href='/2020/03/04/grounded-language-learning/' class='c-post-card  c-post-card--first  '>
-    <h3 class='c-post-card__title'>Grounded Language Learning</h3>
-
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      
-
-    </p>
-
-    <span class='c-post-card__date'>04 Mar 2020</span>
-  </a>
-
-</div>
-    
-      <div class='o-grid__col o-grid__col--full'>
-
-  <a href='/2019/11/18/beam-search/' class='c-post-card  '>
-    <h3 class='c-post-card__title'>Beam Search</h3>
-
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      
-
-    </p>
-
-    <span class='c-post-card__date'>18 Nov 2019</span>
-  </a>
-
-</div>
-    
-      <div class='o-grid__col o-grid__col--full'>
-
-  <a href='/2019/11/06/backpropagation/' class='c-post-card  '>
-    <h3 class='c-post-card__title'>Backpropagation</h3>
-
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      
-
-    </p>
-
-    <span class='c-post-card__date'>06 Nov 2019</span>
-  </a>
-
-</div>
-    
-      <div class='o-grid__col o-grid__col--full'>
-
-  <a href='/2019/10/29/residual-blocks-and-skip-connections/' class='c-post-card   c-post-card--last '>
-    <h3 class='c-post-card__title'>Skip Connections and Residual Blocks</h3>
-
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      
-
-    </p>
-
-    <span class='c-post-card__date'>29 Oct 2019</span>
-  </a>
-
-</div>
-    
-  </div>
-
-  <div class='o-grid'>
-    
-
-
   </div>
 </div>
 
