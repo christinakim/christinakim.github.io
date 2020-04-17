@@ -1,3 +1,4 @@
 
-![image](favicon.ico)
 #christinakim.github.io
+![image](favicon.ico)
+
