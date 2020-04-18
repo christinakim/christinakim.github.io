@@ -7,12 +7,10 @@
   max-width: 740px;
 
   &__title {
-    font-size: double($font-size-tiny);
+    font-size: double($font-size-base);
     margin-bottom: $base-spacing-unit;
-
-    @include mq($from: tablet) {
-      font-size: double($font-size-small);
-    }
+    font-family: $title-font-family;
+    font-weight: bolder;
   }
 
   &__date {
@@ -24,7 +22,6 @@
     font-size: $font-size-small;
     font-weight: $font-weight-bold;
     line-height: $line-height-small;
-    color: $color-gray;
 
     &:after {
       position: absolute;
