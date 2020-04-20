@@ -8,7 +8,7 @@ image:
 <!--end_excerpt-->
 ## What is it
 Grounded Language Learning is the process of learning representations for words based on non-linguistic experience.
-Why is it cool
+
 Grounded language learning works to make use of language, multimodal information, and interactive environments. This research works toward achieving natural language understanding. Currently, natural language understanding is commonly tested by language models from text-only corpora. This approach with language models is based on the idea that the meaning of a word is based on only its relationship to other words. This is also called a distributional notion of semantics. SOTA language models are incredible for many different tasks and even come close to beating humans at natural language understanding benchmarks. However, there are critiques around NLU benchmarks, and grounded language learning argues that the words are not grounded in anything and, therefore, actually meaningless. With grounded language learning, the hope is to be able to create models that can understand and generalize well to their context.
 
 From VIGIL: Visually Grounded Interaction and Language
