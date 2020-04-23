@@ -10,10 +10,13 @@ title:        christina.kim
 email:       'yo@christina.kim'
 description: ''
 baseurl:     '' # The subpath of your site, e.g. /blog
-url:         'christina.kim' # The base hostname & protocol for your site
+url:         'https://christina.kim' # The base hostname & protocol for your site
 twitter:     'https://www.twitter.com/christinahkim'
 github:      'https://www.github.com/christinakim'
 instagram:    'https://www.instagram.com/xtkim'
+
+disqus:
+  shortname: christina-kim
 
 markdown:  kramdown
 permalink: pretty
