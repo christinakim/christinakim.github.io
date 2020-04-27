@@ -14,7 +14,8 @@ url:         'https://christina.kim' # The base hostname & protocol for your sit
 twitter:     'https://www.twitter.com/christinahkim'
 github:      'https://www.github.com/christinakim'
 instagram:    'https://www.instagram.com/xtkim'
-
+author:
+  twitter: christinahkim
 disqus:
   shortname: christina-kim
 
@@ -29,6 +30,7 @@ sass:
 plugins:
   - jekyll-paginate
   - jekyll/tagging
+  - jekyll-feed
 
 include:
   - _pages
@@ -49,3 +51,4 @@ defaults:
       path: '_pages'
     values:
       permalink: /:basename:output_ext
+
