@@ -4,7 +4,7 @@ title: 'Shaping representations through communication: community size effect in 
 tags: [paper-summaries]
 image:
 ---
-paper summary of [Shaping representations through communication: community size effect in artificial learning systems
+paper summary of [Shaping Representations Through Communication: Community Size Effect in Artificial Learning Systems
 ]('https://arxiv.org/abs/1912.06208')
 <!--end_excerpt-->
 

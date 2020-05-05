@@ -23,10 +23,8 @@ Written for some coworkers who wanted to learn deep learning
 I spent some time learning classical ML first since it was most relevant for my job. You can learn deep learning first without any other ML experience/knowledge.
 
 ### ML resources
+I started off with a homemade ML in 10 weeks course. TL;DR, here's the course, using content primarily from [Hands-On Machine Learning with Scikit-Learn and TensorFlow](https://github.com/yanshengjia/ml-road/blob/master/resources/Hands%20On%20Machine%20Learning%20with%20Scikit%20Learn%20and%20TensorFlow.pdf) and Andrew Ng's [Coursera course on ML](https://www.coursera.org/learn/machine-learning):
 
-- started off with a homemade ML in 10 weeks course:
-
-    tl;dr, here's the course, using content primarily from [Hands-On Machine Learning with Scikit-Learn and TensorFlow](https://github.com/yanshengjia/ml-road/blob/master/resources/Hands%20On%20Machine%20Learning%20with%20Scikit%20Learn%20and%20TensorFlow.pdf) and Andrew Ng's [Coursera course on ML](https://www.coursera.org/learn/machine-learning):
     - Chapter 2 End-to-End Machine Learning Project
     - Chapter 3 Classification (precision/recall, multiclass)
     - Text feature extraction (from sklearn docs)
@@ -38,8 +36,7 @@ I spent some time learning classical ML first since it was most relevant for my 
     -  Chapter 8 Dimensionality Reduction (PCA, t-SNE, LDA)
     - Machine Learning System Design
     (Google) Best Practices for ML Engineering
-
-    A group of friends and I worked through this content at a cadence of one meeting every other Wednesday starting late June 2018 wrapping up at the end of 2018.
+A group of friends and I worked through this content at a cadence of one meeting every other Wednesday starting late June 2018 wrapping up at the end of 2018.
 
 ### Deep learning resources
 
@@ -69,7 +66,7 @@ It's easy to get intimated by the math in papers. I found that taking the time t
 
 Once you've understood common concepts, the best way to keep up to date with research and continue learning beyond courses is by reading and reimplementing papers.
 #### How to manage papers
-- track papers through [Zotero](https://www.zotero.org/) or [Mendeley](https://www.mendeley.com/). I started off using Zotero but switched Mendeley to share folders/papers in groups I was in
+I recommend you track papers either through [Zotero](https://www.zotero.org/) or [Mendeley](https://www.mendeley.com/). I started off using Zotero but switched Mendeley to share folders/papers in groups I was in. I don't have a strong opinion on which one is better.
 
 #### How to figure out what to read? Check out these sources:
  - twitter - follow 20+ practitioners/researchers you admire on twitter to find interesting papers
