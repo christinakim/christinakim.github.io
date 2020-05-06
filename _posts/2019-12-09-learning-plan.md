@@ -4,7 +4,7 @@ title: Learning Machine Learning
 tags: [paper-summaries]
 image:
 ---
-Written for some coworkers who wanted to learn deep learning
+_Written for some coworkers who wanted to learn deep learning_
 
 <!--end_excerpt-->
 [How to get started](#how-to-get-started)

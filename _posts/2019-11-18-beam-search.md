@@ -7,7 +7,7 @@ image:
 
 <!--end_excerpt-->
 ## Description
-It's a search algorithm to find the best choice from many options. It explores a graph by expanding the most promising node in a limited set. A beam search is usually used in situations where there isn't a way to store the entire search tree in memory.
+Beam search is a search algorithm to find the best choice from many options. It explores a graph by expanding the most promising node in a limited set. A beam search is usually used in situations where there isn't a way to store the entire search tree in memory.
 
 **where is it used in DL?**
 
