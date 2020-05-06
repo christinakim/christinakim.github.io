@@ -1,0 +1,5 @@
+---
+layout: none
+permalink: .htaccess
+---
+Redirect 301 /calendar(.*) https://calendar.google.com/calendar/embed?src=christinahkim1%40gmail.com&ctz=America%2FLos_Angeles

@@ -34,7 +34,7 @@ plugins:
 
 include:
   - _pages
-
+  - htaccess
 exclude:
   - vendor
   - Gemfile
