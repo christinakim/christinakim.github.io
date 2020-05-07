@@ -1,0 +1,24 @@
+---
+layout: post
+title: 'Signals'
+tags: [thoughts]
+image:
+---
+
+Today we had Robin Hanson come speak at The Archive. His latest book Elephant in the Brain exposes the hidden motivations and desires in our lives. Hanson posits that in our interactions and decisions we try to signal to others certain things. Universities are an example of signaling intelligence, even if you didn’t learn that much. Even changing the conversation can be signaling.
+
+The larger ideas from the book include a) we don’t acknowledge our real motivations for our externally-inspired actions and b) being able to recognize the latent motivations and what people actually want is critical to creating effective policies.
+
+I left his talk with two thoughts:
+
+**How hard would it be to train yourself to be able to pick up hidden motivations?**
+
+His book and his talk reminded me of my experience in undergrad with HCI research and need-finding. I remember conducting countless user interviews and still not being able to come to a definite conclusion of what was missing, and what to design and build. Even interviewing “super/power” users was not useful. Other than becoming more self-aware, I wonder if there are easier hacks to discover the dissonance between what we say we want and what we actually want. I’m imagining this to work in a similar way as to how we can hear when a note is out of tune.
+
+**Given Hanson’s arguments, would publicly shaming bad behavior (e.g. predatory behavior) help create a more net positive world?**
+
+It seems to me that publicly shaming behavior would be an effective way to get behavioral outcomes. Disclaimer: his is a half baked thought and will dig into this more when I have a second.
+
+> “Humans aren’t what they pretend to be. But what they actually are is spectacular” — Hanson
+
+_What am I signaling by writing about signaling?_ 🤔
