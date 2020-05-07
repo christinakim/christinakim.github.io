@@ -14,6 +14,9 @@ url:         'https://christina.kim' # The base hostname & protocol for your sit
 twitter:     'https://www.twitter.com/christinahkim'
 github:      'https://www.github.com/christinakim'
 instagram:    'https://www.instagram.com/xtkim'
+linkedin:     'https://www.linkedin.com/in/chkim1'
+feed:         'https://christina.kim/feed.xml'
+
 author:
   twitter: christinahkim
 disqus:
