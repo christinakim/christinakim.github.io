@@ -15,7 +15,7 @@ twitter:     'https://www.twitter.com/christinahkim'
 github:      'https://www.github.com/christinakim'
 instagram:    'https://www.instagram.com/xtkim'
 linkedin:     'https://www.linkedin.com/in/chkim1'
-feed:         'https://christina.kim/feed.xml'
+rss_feed:         'https://christina.kim/feed.xml'
 
 author:
   twitter: christinahkim
