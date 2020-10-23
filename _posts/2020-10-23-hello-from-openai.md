@@ -6,21 +6,23 @@ image:
 ---
 I'm excited to be joining the Fall 2020 cohort of OpenAI's Scholars program. I'll be writing semi-regularly as a log of what I'm learning and thinking about.
 
-I'm excited to be part of the scholars program since I find learning in a group to be motivating and useful, especially now when everyone is more isolated. It's also been extremely helpful to be able to ask questions and learn from people who have already been thinking about my research interests.
+I'm excited to be part of the scholars' program since I find learning in a group motivating and useful, especially now when everyone is more isolated. It's also been beneficial to ask questions and learn from people who have already been thinking about my research interests.
 
-One of high level goals I'd like to work on is developing "taste" or "aesthetic" for deep learning research throughout this experience.
+One of the high-level goals I'd like to work on is developing "taste" or "aesthetic" for deep learning research throughout this experience.
+
+For the past two weeks, I've been reading about generalization and language models. I've also been working on reimplementing the smaller transformers from the
 
 The past two weeks I've been reading about generalization and language models. I've also been working on reimplementing the smaller transformers from the [Scaling Laws for Neural Languages](https://arxiv.org/pdf/2001.08361.pdf).
 
 ### Scaling Laws for Neural Languages
-The paper uses a decoder only transformer for most of its experiments, as long with LSTM models and the universal transformer. For now, I'll focus on reproducing the smaller scale experiments with the transformer architecture. To understand the architecture for the decoder only transformer better, I read the [original GPT paper](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf). It's surprising to remember that this paper is only ~2 years old. I plan on using datasets available via [HuggingFace's Dataset library](https://huggingface.co/docs/datasets/) for training.
+The paper uses a decoder only transformer for most of its experiments, in addition to LSTM models and the universal transformer. For now, I'll focus on reproducing the smaller-scale experiments with the transformer architecture. To understand the architecture for the decoder only transformer better, I read the [original GPT paper](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf). It's surprising to remember that this paper is only ~2 years old. I plan on using datasets available via [HuggingFace's Dataset library](https://huggingface.co/docs/datasets/) for training.
 
 I found these resources really useful for understanding and implementing the transformer architecture.
 - [The Illustrated Transformer – Jay Alammar](https://jalammar.github.io/illustrated-transformer/)
 - [Illustrated Guide to Transformers](https://towardsdatascience.com/illustrated-guide-to-transformers-step-by-step-explanation-f74876522bc0)
 - [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/01/attention.html#position-wise-feed-forward-networks)
 
-Coincidentally, Jared Kaplan one of the authors of the paper gave a talk on scaling laws this past Wednesday. The slides and the video from the talk can be accessed here on the [Physics ∩ ML website](http://www.physicsmeetsml.org/posts/sem_2020_10_21/).
+Coincidentally, Jared Kaplan, one of the paper's authors, gave a talk on scaling laws this past Wednesday. The slides and the video from the talk can be accessed here on the [Physics ∩ ML website](http://www.physicsmeetsml.org/posts/sem_2020_10_21/).
 
 Below are papers suggested by my mentor for other relevant language model papers to read:
 - [Transformer](https://arxiv.org/abs/1706.03762)
@@ -39,7 +41,7 @@ Below are papers suggested by my mentor for other relevant language model papers
 - [XLNet](https://arxiv.org/abs/1906.08237)
 
 ### Generalization
-I've also been thinking about model generalization this week. Some questions I've been thinking about are: what are the differences between generalization and memorization for some of these larger models with smaller datasets? what is the minimum amount of data required to generalize? what are other factors that allows models to generalize quickly? are there similar scaling law-esque properties for model generalization? what does it look like for a model to generalize well on out of distribution data?
+I've also been thinking about model generalization this week. I've been thinking about some questions: what are the differences between generalization and memorization for some of these larger models with smaller datasets? what is the minimum amount of data required to generalize? what are other factors that allow models to generalize quickly? are there similar scaling law-esque properties for model generalization? what does it look like for a model to generalize well on out of distribution data?
 
 Some papers I've been reading about generalization:
 - [Leveraging Procedural Generation to Benchmark Reinforcement Learning](https://arxiv.org/pdf/1912.01588.pdf)
