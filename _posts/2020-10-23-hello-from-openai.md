@@ -10,12 +10,10 @@ I'm excited to be part of the scholars' program since I find learning in a group
 
 One of the high-level goals I'd like to work on is developing "taste" or "aesthetic" for deep learning research throughout this experience.
 
-For the past two weeks, I've been reading about generalization and language models. I've also been working on reimplementing the smaller transformers from the
-
-The past two weeks I've been reading about generalization and language models. I've also been working on reimplementing the smaller transformers from the [Scaling Laws for Neural Languages](https://arxiv.org/pdf/2001.08361.pdf).
+For the past two weeks, I've been reading about generalization and language models. I've also been working on reimplementing the smaller transformers from the [Scaling Laws for Neural Languages](https://arxiv.org/pdf/2001.08361.pdf).
 
 ### Scaling Laws for Neural Languages
-The paper uses a decoder only transformer for most of its experiments, in addition to LSTM models and the universal transformer. For now, I'll focus on reproducing the smaller-scale experiments with the transformer architecture. To understand the architecture for the decoder only transformer better, I read the [original GPT paper](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf). It's surprising to remember that this paper is only ~2 years old. I plan on using datasets available via [HuggingFace's Dataset library](https://huggingface.co/docs/datasets/) for training.
+The paper uses a decoder only transformer for most of its experiments, in addition to LSTM models and the universal transformer. For now, I'll focus on reproducing the smaller-scale experiments with the transformer architecture. To understand the architecture for the decoder only transformer better, I read the [original GPT paper](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf). It's surprising to remember that this paper is only ~2 years old. I plan to use datasets available via [HuggingFace's Dataset library](https://huggingface.co/docs/datasets/) for training initially, and look into this [WebText scraper](https://github.com/jcpeterson/openwebtext) later.
 
 I found these resources really useful for understanding and implementing the transformer architecture.
 - [The Illustrated Transformer – Jay Alammar](https://jalammar.github.io/illustrated-transformer/)
@@ -29,7 +27,7 @@ Below are papers suggested by my mentor for other relevant language model papers
 - [Transformer XL](https://arxiv.org/abs/1901.02860)
 - [Universal Transformer](https://arxiv.org/abs/1807.03819)
 - [GPT-1](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf)
-- [GPT-2](https://d4mucfpksywv.cloudfront.net/better-language-models)/language_models_are_unsupervised_multitask_learners.pdf)
+- [GPT-2](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
 - [GPT-3](https://arxiv.org/abs/2005.14165)
 - [Reformer](https://arxiv.org/abs/2001.04451)
 - [RL from human feedback](https://arxiv.org/abs/2009.01325)
