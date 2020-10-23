@@ -1,5 +1,5 @@
 
-# ![image](favicon.ico) christina.kim
+# ![image](favicon_2.ico) christina.kim
 
 paper summaries, atomic notes, other opinions
 
