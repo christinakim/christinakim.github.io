@@ -24,6 +24,7 @@ disqus:
 
 markdown:  kramdown
 permalink: pretty
+post_dirs: false
 paginate:  10
 excerpt_separator: <!--end_excerpt-->
 
@@ -54,5 +55,5 @@ defaults:
   - scope:
       path: '_pages'
     values:
-      permalink: /:basename:output_ext
+      permalink: /:basename
 
