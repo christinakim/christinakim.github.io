@@ -10,6 +10,9 @@ There are transformer architectures that try to add recurrence to the models, li
 
 Besides adding some idea of recurrence in the Universal Transformer, many other transformer architectures try to improve on the original implementation and performance. I'm curious about evaluating and understanding the different architecture trade-offs in the many transformers' papers. I hypothesize that autoregressive transformer models can learn some positional information, so they might benefit more from other types of positional encodings than non-autoregressive transformer models. It'd also be interesting to compare different attention mechanisms, such as the Reformer's v.s. self-attention. I'm interested in learning the answers to these questions since I think it'll hopefully elucidate what "skills" are essential and what degree of natural language understanding.
 
+To better understand the performance differences between the different papers and implementation, I focused on
+ learning more about the metrics used for language models. The terms I frequently came across were perplexity, bits per word(character), and cross-entropy. Perplexity can be thought of as the measure of uncertainty your model has for predictions. So the lower the perplexity, the higher confidence your model has about it's predictions. Bits per word, or character, can be thought of as the entropy of the language. BPW measures the average number of bits required to encode the word. Given a language's probability of P and our model's learned probability Q, cross-entropy measures the total average amount of bits needed to represent events from Q to P. These terms helped me evaluate papers and helped me think about how to evaluate my toy datasets.
+
 Below is my self-attention function that uses [einsum](https://pytorch.org/docs/stable/generated/torch.einsum.html), which has been really handy!
 ```
 def self_attention(key, query, value):
