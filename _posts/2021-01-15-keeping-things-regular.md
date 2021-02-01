@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Keeping Things Regular
-tags: [research,OpenAI Scholars]
+tags: [research, OpenAI Scholars]
 image:
 ---
 *In this post, I will introduce the direction of my OpenAI scholars' project.*
