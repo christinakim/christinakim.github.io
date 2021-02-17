@@ -16,7 +16,7 @@ Below is how I use PyTorch's IterableDataset to stream from multiple files to cr
 
 To handle the multiple transformations from the raw text, to a batched output, I use generators for each transformation in the process.
 
-```
+{% highlight python %}
 import random
 from itertools import chain
 from itertools import cycle
@@ -127,7 +127,7 @@ class StreamingIterableDataset(IterableDataset):
             torch.LongTensor(seq_len_list),
         )
 
-```
+{% endhighlight %}
 
 
 
