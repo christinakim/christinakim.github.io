@@ -1,9 +1,9 @@
-------
+---
 layout: post
 title: Experimenting in an Infinite Data Regime
 tags: [research, OpenAI Scholars, streaming dataset, dataloader, dataset, pytorch]
 image:
-------
+---
 Most machine learning tutorials gear toward defined datasets that can fit in the memory of most machines. These datasets are great for benchmarking new algorithms and for learning. However, newer SOTA models have many more parameters, and they train in an infinite data regime.
 
 I ran into quite a few bugs while setting up an experiment with OpenWebText2, a clone of WebText which contains over 40GB of data. In this blog post, I want to share some differences to consider when working in an infinite data regime and how to prevent common bugs.
