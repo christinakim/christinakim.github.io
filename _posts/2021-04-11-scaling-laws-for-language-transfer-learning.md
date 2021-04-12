@@ -11,8 +11,8 @@ Historically, the advancement of deep learning capabilities has centered around 
 
 My project’s framework for experiments is inspired by the work on scaling laws published by OpenAI in the past year. Scaling laws (Kaplan et al. 2020) can predict machine learning performance as a function of model size, dataset size, and the amount of compute used for training. Kaplan et al. (2020) also found that this relationship holds over several orders of magnitude. Earlier this year, scaling relationships were found for transfer learning from pre-trained english text models to Python (Hernandez et al 2021).
 
-
 ![image](/images/posts/scaling-laws-for-language-transfer/meme.jpg)
+{: .imgContainer1}
 
 In my project, I continue the study of between-language relationships and look at scaling between three other languages and English. Scaling laws for transfer are important because the scaling relationships explain how to work in limited data regimes. In an ideal world, one would have an infinite amount of data for a model to learn from. However, getting a large quantity of high quality data is a nontrivial, if not impossible, task and as a result, most problems exist in the low data regime. Before the Scholars program, I was a machine learning engineer and saw firsthand how costly it was in terms of both time and money to get good quality human labels for our tasks. Exploring the relationships between different languages can provide more insight on how to tackle low-resource languages and how to best leverage pre-trained language models. Given the real world limitations of data, the tradeoffs between budgeting for compute on larger models and budgeting for more fine-tuning data is an important practical relationship to understand.
 
@@ -24,7 +24,9 @@ Building upon work from Scaling Laws for Transfer (Hernandez et. al. 2021), my e
 I first trained English language models in a similar setup to Scaling Laws for Neural Languages.  I pre-trained decoder-only transformers of size 124M, 70M, 51M, 39M, 16M, 3.3M, non-embedding parameters with the same hyperparameters on openwebtext2 (65.86GB), an open-source version of WebText created by Eleuther AI. I used Adam, a batch size of 512, sequences of 1024 tokens and the learning rate schedule was a 500 step warm-up with a cosine decay to 10% of the maximum learning rate. The text was encoded with the same GPT2 tokenizer, a Byte-Level Byte-Pair Encoding tokenizer with a 50K vocab size, and all models were trained for a total of 26 billion tokens with no repeats. The code to reproduce these pre-trained models is available here, including model weights. As seen in the figure below comparing loss and model size, the models exhibit scaling laws as model size increases. However, the relationship isn’t exactly linear, suggesting that maybe the larger models are undertrained or the hyperparameters are not tuned thoroughly.
 
 ![image](/images/posts/scaling-laws-for-language-transfer/openwebtext2.png)
+{: .imgContainer1}
 ![image](/images/posts/scaling-laws-for-language-transfer/openwebtext2_compute.png)
+{: .imgContainer1}
 
 
 
@@ -36,7 +38,7 @@ The models fine-tuned on non-English languages with the pre-trained English mode
 ## Results
 #### Effective Data Transfer
 ![image](/images/posts/scaling-laws-for-language-transfer/effective-data-transfer-explanation.png)
-
+{: .imgContainer1}
 
 In my experiments, I wanted to find the effective data transferred for models trained on English text to Chinese, Spanish, and German text. The effective data transferred is defined in Scaling Laws for Transfer as the amount of additional fine-tuning data that a model of the same size, trained on only that fine-tuning dataset, would have needed to achieve the same loss as a pre-trained model.
 
@@ -47,6 +49,10 @@ In my experiments, I wanted to find the effective data transferred for models tr
     transform: translateX(-50%);
   }
 
+  .imgContainer1 img {
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
 
 </style>
 
@@ -73,6 +79,7 @@ In the low data regime, pre-training is helpful across model sizes, but especial
 
 Lastly, pre-trained models are more compute efficient than training from-scratch across dataset sizes. This is without accounting for the compute costs for the pre-trained model.
 ![image](/images/posts/scaling-laws-for-language-transfer/loss_v_compute_60M_transformer_500M_chinese.png)
+{: .imgContainer1}
 
 
 ## Limitations

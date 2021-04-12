@@ -7,7 +7,7 @@
 
 # Site settings
 title:        christina.kim
-email:       'yo@christina.kim'
+email:       'hi@christina.kim'
 description: ''
 baseurl:     '' # The subpath of your site, e.g. /blog
 url:         'https://christina.kim' # The base hostname & protocol for your site
