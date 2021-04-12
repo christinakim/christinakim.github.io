@@ -8,6 +8,24 @@
   <link rel='canonical' href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel='alternate' type='application/rss+xml' title='{{ site.title }}' href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}">
 <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+   <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+  <script type="text/javascript">
+$(".imgContainer>img").each(function(i, img) {
+    $(img).css({
+        position: "relative",
+        left: ($(img).parent().width() - $(img).width()) / 2
+    });
+});
+</script>
   <style>
     {% capture inlineCSS %}
       {% include app.scss %}
