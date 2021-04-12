@@ -8,13 +8,15 @@ image:
 
 ## Introduction
 Historically, the advancement of deep learning capabilities has centered around three levers: improved algorithms, faster and cheaper compute, and larger and higher quality datasets.  Given machine learning’s promise to significantly impact society, deepening our general understanding of machine learning, and how certain levers improve models, is critical for making better predictions for which capabilities will develop next, and when. Recently, researchers have increasingly explored scaling relationships between these three levers.
-
+![image](/images/posts/scaling-laws-for-language-transfer/scaling-autoreg.png)
+*Figure from Henighan et al. 2020.*
+{: .imgContainer}
 My project’s framework for experiments is inspired by the work on scaling laws published by OpenAI in the past year. Scaling laws (Kaplan et al. 2020) can predict machine learning performance as a function of model size, dataset size, and the amount of compute used for training. Kaplan et al. (2020) also found that this relationship holds over several orders of magnitude. Earlier this year, scaling relationships were found for transfer learning from pre-trained english text models to Python (Hernandez et al 2021).
 
 ![image](/images/posts/scaling-laws-for-language-transfer/meme.jpg)
 {: .imgContainer1}
 
-In my project, I continue the study of between-language relationships and look at scaling between three other languages and English. Scaling laws for transfer are important because the scaling relationships explain how to work in limited data regimes. In an ideal world, one would have an infinite amount of data for a model to learn from. However, getting a large quantity of high quality data is a nontrivial, if not impossible, task and as a result, most problems exist in the low data regime. Before the Scholars program, I was a machine learning engineer and saw firsthand how costly it was in terms of both time and money to get good quality human labels for our tasks. Exploring the relationships between different languages can provide more insight on how to tackle low-resource languages and how to best leverage pre-trained language models. Given the real world limitations of data, the tradeoffs between budgeting for compute on larger models and budgeting for more fine-tuning data is an important practical relationship to understand.
+In my project, I continue the study of transfer between distributions and look at scaling between three other languages and English. Scaling laws for transfer are important because the scaling relationships explain how to work in limited data regimes. In an ideal world, one would have an infinite amount of data for a model to learn from. However, getting a large quantity of high quality data is a nontrivial, if not impossible, task and as a result, most problems exist in the low data regime. Before the Scholars program, I was a machine learning engineer and saw firsthand how costly it was in terms of both time and money to get good quality human labels for our tasks. Exploring the relationships between different languages can provide more insight on how to tackle low-resource languages and how to best leverage pre-trained language models. Given the real world limitations of data, the tradeoffs between budgeting for compute on larger models and budgeting for more fine-tuning data is an important practical relationship to understand.
 
 
 ## Experiment Methodology
