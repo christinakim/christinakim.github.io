@@ -17,7 +17,6 @@ Historically, the advancement of deep learning capabilities has centered around 
 {: .imgContainer1}
 My project’s framework for experiments is inspired by the work on scaling laws published by OpenAI in the past year. Scaling laws (Kaplan et al. 2020) can predict machine learning performance as a function of model size, dataset size, and the amount of compute used for training. Henighan et al. (2020) also found that this relationship holds over several orders of magnitude across different modalities, as seen in the figure above. Earlier this year, scaling relationships were found for transfer learning from pre-trained english text models to Python (Hernandez et al 2021). These results show that compute, dataset size, and model size are different limiting factors that scale with each other in surprisingly predictable trends when we setup our experiments to measure those things.
 
-
 ![image](/images/posts/scaling-laws-for-language-transfer/meme.jpg)
 {: .imgContainer1}
 
@@ -28,7 +27,7 @@ In my project, I continue the study of transfer between distributions and look a
 Building upon work from Scaling Laws for Transfer (Hernandez et. al. 2021), my experiments focused on exploring the relationships between fine-tuning on non-English languages. My experiments try to answer the question: **How much does pre-training on English help when transferring across different languages as we vary the dataset size and model size?**
 
 ### Pre-training
-I first trained English language models in a similar setup to Scaling Laws for Neural Languages.  I pre-trained decoder-only transformers of size 124M, 70M, 51M, 39M, 16M, 3.3M, non-embedding parameters with the same hyperparameters on [OpenWebtext2](https://openwebtext2.readthedocs.io/en/latest/)(65.86GB), an open-source version of WebText created by [Eleuther AI](https://www.eleuther.ai/). All models used Adam, a batch size of 512, context length of 1024 tokens, and a learning rate schedule with a 500 step linear warm-up with a cosine decay to 10% of the maximum learning rate. The text was encoded with a [GPT2 tokenizer](https://huggingface.co/transformers/model_doc/gpt2.html#gpt2tokenizer), a byte-level Byte-Pair Encoding tokenizer with a 50K vocab size. All models were trained for a total of 26 billion tokens with no repeats. The code to reproduce these pre-trained models is available on [Github](https://github.com/christinakim/scaling-laws-for-language-transfer), including model weights. As seen in the figure below comparing loss and model size, the models exhibit scaling laws as model size increases. However, the relationship isn’t exactly linear, suggesting that maybe the larger models are under-trained or the hyperparameters are not tuned thoroughly.
+I first trained English language models in a similar setup to Scaling Laws for Neural Languages.  I pre-trained decoder-only transformers of size 124M, 70M, 51M, 39M, 16M, 3.3M, non-embedding parameters with the same hyperparameters on [OpenWebtext2](https://openwebtext2.readthedocs.io/en/latest/)(65.86GB), an open-source version of WebText created by [Eleuther AI](https://www.eleuther.ai/). All models used Adam, a batch size of 512, context length of 1024 tokens, and a learning rate schedule with a 500 step linear warm-up with a cosine decay to 10% of the maximum learning rate. The text was encoded with a [GPT2 tokenizer](https://huggingface.co/transformers/model_doc/gpt2.html#gpt2tokenizer), a byte-level Byte-Pair Encoding tokenizer with a 50K vocab size. All models were trained for a total of 26 billion tokens with no repeats. The code to reproduce these pre-trained models is available on [GitHub](https://github.com/christinakim/scaling-laws-for-language-transfer), including model weights. As seen in the figure below comparing loss and model size, the models exhibit scaling laws as model size increases. However, the relationship isn’t exactly linear, suggesting that maybe the larger models are under-trained or the hyperparameters are not tuned thoroughly.
 
 ![image](/images/posts/scaling-laws-for-language-transfer/openwebtext2.png)
 {: .imgContainer1}
@@ -38,7 +37,7 @@ I first trained English language models in a similar setup to Scaling Laws for N
 
 
 ### Fine-Tuning
-For the fine-tuning experiments, dataset size spanned six orders of magnitude, and model size spanned two orders of magnitude trained on three different languages: Spanish, Chinese, and German. Models trained or fine-tuned on Chinese datasets leveraged a 1.2 billion character dataset, Community QA. Community QA (webtext2019zh) is similar to the WebText corpus. Models trained or fine-tuned on Spanish texts and German texts are from Oscar, a multilingual corpus obtained by language classification and filtering of the Common Crawl corpus.
+For the fine-tuning experiments, dataset size spanned six orders of magnitude, and model size spanned two orders of magnitude trained on three different languages: Spanish, Chinese, and German. Models trained or fine-tuned on Chinese datasets leveraged a 1.2 billion character dataset, Community QA. Community QA (webtext2019zh) is similar to the WebText corpus. Models trained or fine-tuned on Spanish texts and German texts are from [Oscar](https://oscar-corpus.com/), a multilingual corpus obtained by language classification and filtering of the Common Crawl corpus.
 
 The models fine-tuned on non-English languages with the pre-trained English model weights, and the models trained on non-English languages from-scratch were all trained to convergence to the optimal early stopping point, with a learning rate schedule of a 300 step warm-up with a cosine decay to 10% of the maximum learning rate. The code to replicate these experiments will also be available on GitHub.
 
@@ -47,11 +46,11 @@ The models fine-tuned on non-English languages with the pre-trained English mode
 ![image](/images/posts/scaling-laws-for-language-transfer/effective-data-transfer-explanation.png)
 {: .imgContainer1}
 
-In my experiments, I wanted to find the effective data transferred for models trained on English text to Chinese, Spanish, and German text. The effective data transferred is defined in Scaling Laws for Transfer as the amount of additional fine-tuning data that a model of the same size, trained on only that fine-tuning dataset, would have needed to achieve the same loss as a pre-trained model.
+In my experiments, I wanted to find the effective data transferred for models trained on English text to Chinese, Spanish, and German text. The effective data transferred is defined in Scaling Laws for Transfer as the amount of additional fine-tuning data that a model of the same size, trained on only that fine-tuning dataset, would have needed to achieve the same loss as a pre-trained model. In the figure above, each point is a 16M transformer trained to convergence on dataset size X.
 
 <style type="text/css">
   .imgContainer img {
-    max-width: 150% !important;
+    max-width: 175% !important;
     margin-left: 50%;
     transform: translateX(-50%);
   }
