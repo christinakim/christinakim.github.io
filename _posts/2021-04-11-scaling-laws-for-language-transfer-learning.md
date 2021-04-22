@@ -11,12 +11,11 @@ image:
 [code](https://github.com/christinakim/scaling-laws-for-language-transfer) \| [models](https://huggingface.co/christina) <!---
 \| [presentation]() -->
 
-
 ## Introduction
 Historically, the advancement of deep learning capabilities has centered around three levers: improved algorithms, faster and cheaper compute, and larger and higher quality datasets.  Given machine learning’s promise to significantly impact society, deepening our general understanding of machine learning, and how certain levers improve models, is critical for making better predictions for which capabilities will develop next, and when. Recently, researchers have increasingly explored scaling relationships between these three levers.
 ![image](/images/posts/scaling-laws-for-language-transfer/scaling-autoreg.png)
 {: .imgContainer1}
-*Figure from Henighan et al. 2020.*
+*Fig 1. Figure from Henighan et al. 2020.*
 {: .image-caption}
 
 My project’s framework for experiments is inspired by the work on scaling laws published by OpenAI in the past year. Scaling laws (Kaplan et al. 2020) can predict machine learning performance as a function of model size, dataset size, and the amount of compute used for training. Henighan et al. (2020) also found that this relationship holds over several orders of magnitude across different modalities, as seen in the figure above. Earlier this year, scaling relationships were found for transfer learning from pre-trained english text models to Python (Hernandez et al 2021). These results show that compute, dataset size, and model size are different limiting factors that scale with each other in surprisingly predictable trends when we setup our experiments to measure those things.
@@ -27,21 +26,20 @@ My project’s framework for experiments is inspired by the work on scaling laws
 
 In my project, I continue the study of transfer between distributions and look at scaling between three other languages and English. Scaling laws for transfer are important because the scaling relationships explain how to work in limited data regimes. In an ideal world, one would have an infinite amount of data for a model to learn from. However, getting a large quantity of high quality data is a nontrivial, if not impossible, task and as a result, most problems exist in the low data regime. Before the Scholars program, I was a machine learning engineer and saw firsthand how costly it was in terms of both time and money to get good quality human labels for our tasks. Exploring the relationships between different languages can provide more insight on how to tackle low-resource languages and how to best leverage pre-trained language models. Given the real world limitations of data, the tradeoffs between budgeting for compute on larger models and budgeting for more fine-tuning data is an important practical relationship to understand.
 
-
 ## Experiment Methodology
 Building upon work from Scaling Laws for Transfer (Hernandez et. al. 2021), my experiments focused on exploring the relationships between fine-tuning on non-English languages. My experiments try to answer the question: **How much does pre-training on English help when transferring across different languages as we vary the dataset size and model size?**
 
 ### Pre-training
-I first trained English language models in a similar setup to Scaling Laws for Neural Language Models. I pre-trained decoder-only transformers of size 124M, 70M, 51M, 39M, 16M, 3.3M, non-embedding parameters with the same hyperparameters on [OpenWebtext2](https://openwebtext2.readthedocs.io/en/latest/)(65.86GB), an open-source version of WebText created by [Eleuther AI](https://www.eleuther.ai/). All models used Adam, a batch size of 512, context length of 1024 tokens, and a learning rate schedule with a 500 step linear warm-up with a cosine decay to 10% of the maximum learning rate. The text was encoded with a [GPT2 tokenizer](https://huggingface.co/transformers/model_doc/gpt2.html#gpt2tokenizer), a byte-level Byte-Pair Encoding tokenizer with a 50K vocab size. All models were trained for a total of 26 billion tokens with no repeats. The code to reproduce these pre-trained models is available on [GitHub](https://github.com/christinakim/scaling-laws-for-language-transfer), including model weights. As seen in the figure below comparing loss and model size, the models exhibit scaling laws as model size increases. However, the relationship isn’t exactly linear, suggesting that maybe the larger models are under-trained or the hyperparameters are not tuned thoroughly.
+I first trained English language models in a similar setup to Scaling Laws for Neural Language Models. I pre-trained decoder-only transformers of size 124M, 70M, 51M, 39M, 16M, 3.3M, non-embedding parameters with the same hyperparameters on [OpenWebtext2](https://openwebtext2.readthedocs.io/en/latest/)(65.86GB), an open-source version of WebText created by [Eleuther AI](https://www.eleuther.ai/). All models used Adam, a batch size of 512, context length of 1024 tokens, and a learning rate schedule with a 500 step linear warm-up with a cosine decay to 10% of the maximum learning rate. The text was encoded with a [GPT2 tokenizer](https://huggingface.co/transformers/model_doc/gpt2.html#gpt2tokenizer), a byte-level Byte-Pair Encoding tokenizer with a 50K vocab size. All models were trained for a total of 26 billion tokens with no repeats. The code to reproduce these pre-trained models is available on [GitHub](https://github.com/christinakim/scaling-laws-for-language-transfer), including model weights. As seen in the figure below comparing loss and model size, the models exhibit scaling laws as model size increases. However, the relationship isn’t exactly linear, suggesting that maybe the models are under-trained or the hyperparameters are not tuned thoroughly.
 
 ![image](/images/posts/scaling-laws-for-language-transfer/openwebtext2.png)
 {: .imgContainer1}
-*Fig 1. Training curves for transformers on OpenWebtext2*
+*Fig 2. Training curves for transformers on OpenWebtext2. The larger models overlap with each other early in training which suggest the hyperparameters are not tuned thoroughly.*
 {: .image-caption}
 
 ![image](/images/posts/scaling-laws-for-language-transfer/openwebtext2_compute.png)
 {: .imgContainer1}
-*Fig 2. Language modeling performance improves as parameters increases*
+*Fig 3. Language modeling performance improves as parameters increases, but the relationship is not linear.*
 {: .image-caption}
 
 
@@ -55,8 +53,7 @@ The models fine-tuned on non-English languages with the pre-trained English mode
 #### Effective Data Transfer
 ![image](/images/posts/scaling-laws-for-language-transfer/effective-data-transfer-explanation.png)
 {: .imgContainer1}
-*Fig 3. The performance of a 16M parameter transformer model on Chinese, both trained
-from scratch on Chinese and pre-trained on English then fine-tuned on Chinese*
+*Fig 4. The performance of a 16M parameter transformer model on Chinese, both trained from scratch on Chinese and pre-trained on English then fine-tuned on Chinese.*
 {: .image-caption}
 
 In my experiments, I wanted to find the effective data transferred for models trained on English text to Chinese, Spanish, and German text. The effective data transferred is defined in Scaling Laws for Transfer as the amount of additional fine-tuning data that a model of the same size, trained on only that fine-tuning dataset, would have needed to achieve the same loss as a pre-trained model. In the figure above, each point is a 16M transformer trained to convergence on dataset of X tokens. The total amount of data required for the model trained from scratch can be represented as $D_e = D_f + D_t$ where $D_e$ is the total amount of effective data, $D_f$ is the amount of data needed for the fine-tuned model, and $D_t$ is the amount of additional data needed for the trained from scratch model. $D_t$ is the amount of data transferred from pre-training on English.
@@ -84,7 +81,7 @@ In my experiments, I wanted to find the effective data transferred for models tr
 
 ![image](/images/posts/scaling-laws-for-language-transfer/effective_data_transfer_16M_transformer.png)
 {: .imgContainer}
-*Fig 4. Comparing performance of a 16M parameter transformers trained from scratch, and fine-tuned on Chinese, Spanish, and German. For the dataset size of 8000 tokens, $D_t$, the amount of data transferred, is largest for German. The dashed line on the graphs represent $D_t$. As the number of tokens in the dataset size increase, $D_t$ becomes smaller across all languages.*
+*Fig 5. Comparing performance of a 16M parameter transformers trained from scratch, and fine-tuned on Chinese, Spanish, and German. For the dataset size of 8000 tokens, $D_t$, the amount of data transferred, is largest for German. The dashed line on the graphs represent $D_t$. As the number of tokens in the dataset size increase, $D_t$ becomes smaller across all languages.*
 {: .image-caption}
 
 As seen in the figures above, English to Chinese had a smaller amount of data transferred compared to English to Spanish for the same model size and English to German had the greatest amount of data transferred. Pre-trained English text models help most when learning German, followed by Spanish, and finally, Chinese. I believe these results reflect the degree of linguistic similarities between English and the non-English  languages. English and German are both derived from Proto-Germanic and are linguistically most similar. Although the Spanish alphabet shares almost all the same symbols with the English alphabet, it is a Romance language, and Chinese does not share the same alphabet as English. Each language has a distinctive shape and distance between fine-tuning and training from scratch. For instance, the effective data transfer is not too much greater for Spanish, vs Chinese, at the smallest dataset size, 8000 tokens. However, as we increase the dataset size, pre-training continues to help for another order of magnitude until the 100M token dataset size  than the Chinese which converges at 10M token dataset size.
@@ -95,7 +92,7 @@ $D_f /D_e $ measures the fraction of effective data from fine-tuning. A smaller 
 
 ![image](/images/posts/scaling-laws-for-language-transfer/comparing_1-effective.png)
 {: .imgContainer}
-*Fig 5. Comparing $D_f/D_e$ of a 16M parameter transformer model on Chinese, Spanish, and German*
+*Fig 6. Comparing the fraction of effective data from fine-tuning of a 16M parameter transformer model on Chinese, Spanish, and German.*
 {: .image-caption}
 
 I find many of the same trends and relationships found in the Scaling Law for Transfer between text and code, between English and different languages.
@@ -105,7 +102,7 @@ In the low data regime, pre-training is helpful across model sizes, but especial
 Lastly, pre-trained models are more compute efficient than training from-scratch across dataset sizes. This is without accounting for the compute costs for the pre-trained model.
 ![image](/images/posts/scaling-laws-for-language-transfer/loss_v_compute_60M_transformer_500M_chinese.png)
 {: .imgContainer1}
-*Fig 6. Comparing the amount of compute of a 60M transformer trained from scratch and fine-tuned on 500M tokens of Chinese*
+*Fig 7. Comparing amount of compute needed for a 60M transformer trained from scratch and fine-tuned on 500M tokens of Chinese*
 {: .image-caption}
 
 ## Limitations
