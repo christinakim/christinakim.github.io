@@ -8,8 +8,7 @@ image:
 
 ##### Here, I will discuss scaling laws discovered while fine-tuning across different languages with pre-trained English language models. Specifically, I found that a) pre-trained English models help most when learning German, then Spanish, and finally Chinese and b) transfer from English to Chinese, German, and Spanish scales predictably in terms of parameters, data, and compute.
 
-[code](https://github.com/christinakim/scaling-laws-for-language-transfer) \| [models](https://huggingface.co/christina) <!---
-\| [presentation]() -->
+[code](https://github.com/christinakim/scaling-laws-for-language-transfer) \| [models](https://huggingface.co/christina) \| [presentation](https://youtu.be/lpe5Gwuqa-k)
 
 ## Introduction
 Historically, the advancement of deep learning capabilities has centered around three levers: improved algorithms, faster and cheaper compute, and larger and higher quality datasets.  Given machine learning’s promise to significantly impact society, deepening our general understanding of machine learning, and how certain levers improve models, is critical for making better predictions for which capabilities will develop next, and when. Recently, researchers have increasingly explored scaling relationships between these three levers.
