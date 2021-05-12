@@ -96,6 +96,10 @@ $D_f /D_e $ measures the fraction of effective data from fine-tuning. A smaller 
 
 I find many of the same trends and relationships found in the Scaling Law for Transfer between text and code, between English and different languages.
 
+
+![image](/images/posts/scaling-laws-for-language-transfer/data-limited.png)
+{: .imgContainer1}
+
 In the low data regime, pre-training is helpful across model sizes, but especially in large model sizes. When using pre-trained models, model performance is *parameter limited*. Model performance is considering parameter limited when the loss continues to decrease as we increase the model size. Model performance is data limited when increasing the number of parameters does not impact the loss. This is evident in the figure above, which shows that as model size increased with a fixed dataset size of Chinese text to fine-tune on, models trained from scratch on Chinese did not improve as much while models that were pre-trained on English improved more to achieve better performance. The flat lines indicate the performance is data limited, while the sloped lines indicates the performance is more limited by the number of parameters.
 
 Lastly, pre-trained models are more compute efficient than training from-scratch across dataset sizes. This is without accounting for the compute costs for the pre-trained model.
