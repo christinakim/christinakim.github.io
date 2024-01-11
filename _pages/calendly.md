@@ -1,4 +1,0 @@
----
-layout: calendly
-title: Calendly
----

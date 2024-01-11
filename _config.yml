@@ -13,10 +13,8 @@ baseurl:     '' # The subpath of your site, e.g. /blog
 url:         'https://christina.kim' # The base hostname & protocol for your site
 twitter:     'https://www.twitter.com/christinahkim'
 github:      'https://www.github.com/christinakim'
-instagram:    'https://www.instagram.com/xtkim'
 linkedin:     'https://www.linkedin.com/in/chkim1'
 rss_feed:         'https://christina.kim/feed.xml'
-house: "https://archive.house"
 author:
   twitter: christinahkim
 disqus:
@@ -49,6 +47,8 @@ exclude:
 tag_page_dir:         tag
 tag_page_layout:      tag_page
 tag_permalink_style:  pretty
+
+remote_theme: pages-themes/minimal@v0.2.0
 
 # Pages path
 defaults:
