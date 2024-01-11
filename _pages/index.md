@@ -3,6 +3,6 @@ layout: page
 title:
 ---
 
-Research Engineer at OpenAI, currently on the Post-Training team. Previously on the Reinforecement Learning team.
+research engineer at openAI, currently on the post-training team. previously on the reinforecement learning team.
 
-I've worked on the [Finetuning API](https://openai.com/blog/customizing-gpt-3), [WebGPT](https://openai.com/research/webgpt), [ChatGPT](https://openai.com/blog/chatgpt), [ChatGPT with Browsing](https://openai.com/blog/chatgpt-plugins#browsing)
+i've worked on the [finetuning API](https://openai.com/blog/customizing-gpt-3), [webgpt](https://openai.com/research/webgpt), [chatgpt](https://openai.com/blog/chatgpt), [chatgpt with browsing](https://openai.com/blog/chatgpt-plugins#browsing)
