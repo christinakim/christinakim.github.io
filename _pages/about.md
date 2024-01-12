@@ -1,6 +1,6 @@
 ---
 layout: about
-title: About
+title: about
 image: 'images/pages/bb.jpeg'
 ---
-on the pursuit of refining taste and aesthetic
+in the pursuit of refining taste and aesthetic
